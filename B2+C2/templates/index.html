@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dynamic Members!</title>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quicksand">
+	<style type="text/css">
+		body
+		{
+			margin: 0;
+			font-family: Quicksand;
+		}
+		#background
+		{
+			width: 100vw;
+			min-height: 100vh;
+			background: linear-gradient(to bottom right, rgb(41, 128, 185), rgb(109, 213, 250), rgb(255, 255, 255));
+		}
+		.flex-container 
+		{
+			display: inline-flex;
+			flex-wrap: wrap;
+			width: 100vw;
+		}
+		#heading
+		{
+			font-family: Quicksand;
+			font-size: 60px;
+			text-align: center;
+			width: 100vw;
+			color: white;
+		}
+		.member
+		{
+			height: 100px;
+			width: 300px;
+			background-color: white;
+			border-radius: 25px;
+			margin: 30px;
+			font-family: Quicksand;
+			font-size: 30px;
+			padding: 30px;
+			position: relative;
+		}
+		.button 
+		{
+			height: 100px;
+			width: 300px;
+			background-color: white;
+			border-radius: 25px;
+			margin: 30px;
+			font-family: Quicksand;
+			font-size: 30px;
+			transition-duration: 0.2s;
+			border: 2px solid #008CBA;
+		}
+		.button:hover 
+		{
+			background-color: #008CBA;
+			color: white;
+		}
+		#memberForm
+		{
+			height: 70vh;
+			width: 70vw;
+			background-color: white;
+			border-radius: 25px;
+			top: 50%;
+			left: 50%;
+			position: fixed;
+			margin-top: -35vh;
+  			margin-left: -35vw;
+  			display: none;
+  			z-index: 10;
+  			padding: 30px;
+  			font-size: 40px;
+  			overflow: scroll;
+		}
+		#overlay 
+		{
+			position: fixed;
+			display: none;
+			width: 100vw;
+			height: 100vh;
+			background-color: rgba(0,0,0,0.5);
+			z-index: 2;
+		}
+		.info
+		{
+			box-sizing: border-box; 
+			width: 100%;
+			height: 40px;
+			font-size: 30px;
+			border-radius: 25px;
+			border-style:solid;
+			border-color: lightblue;
+			padding: 20px;
+		}
+		.top-right 
+		{
+			position: absolute;
+			top: 8px;
+			right: 16px;
+			background-color: white;
+			border-style:solid;
+			border: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="memberForm">
+		<form style="width: 100%;" action="{{ url_for('add_member') }}" method="post">
+			<button class="top-right" onclick="closeForm()">X</button>
+			<h1 style="width: 100%; text-align: center; font-size: 50px;">Enter details of New Member</h1>
+			<label for="name">Name</label>
+			<input type="text" name="name" placeholder="Enter Name" required class="info">
+			<label for="age">Age</label>
+			<input type="number" name="age" placeholder="Enter Age" required class="info">
+			<br><br>
+			<input type="submit" name="submit" placeholder="Submit" style="padding: 0px;" class="info">
+		</form>
+	</div>
+	<div id="overlay"></div>
+	<div id="background">
+		<div id="heading">
+			Dynamic Members List!
+		</div>
+		<div class="flex-container">
+			{% for member in members %}
+			<div class="member">
+				<form action="{{ url_for('remove') }}" method="post">
+					<input type="submit" class="top-right" value="X" name="{{ member.sno }}"></input>
+				</form>
+				<div>Name : {{ member.name }}</div>
+				<div>Age : {{ member.age }}</div>
+			</div>
+			{% endfor %}
+			<button class="button" onclick="openForm()">+<br>New Member</button>
+		</div>
+	</div>
+	<script>
+		function openForm() 
+		{
+			document.getElementById("memberForm").style.display = "inline-flex";
+			document.getElementById("overlay").style.display = "block";
+		}
+
+		function closeForm() 
+		{
+			document.getElementById("memberForm").style.display = "none";
+			document.getElementById("overlay").style.display = "none";
+		}
+	</script>
+</body>
+</html>

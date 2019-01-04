@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="centered" id="whitebox">
+<div style="padding: 30px;">
+				<h1>Login</h1>
+</div>
+<div style="padding: 30px; position: absolute; width: 90%; bottom: 5%">
+	<form style="padding-right: 30px;" action="{{ url_for('login') }}" method="post">
+		Username<br>
+		<input type="text" name="Username" class="credentials" name="Username"><br>
+		<br>
+		Password<br>
+		<input type="Password" name="Password" class="credentials" name="Password"><br><br>
+		<input type="submit" value="Login" class="submit">
+	</form>
+</div>
+</div>
+<a href="{{ url_for('register') }}" style="position: absolute; bottom: 12%; left: 44%; background-color: white;padding: 15px;font-family: Quicksand; border-radius: 25px;">Click Here to Register</a>
+
+{% endblock %}
