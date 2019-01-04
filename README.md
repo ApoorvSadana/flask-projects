@@ -33,4 +33,6 @@ Features of Login Webpage:
 3. Mentions if account is not registered.
 4. Prevents registration of two accounts with same username.
 
+**Note: On Firefox, the Enter Age option in B2+C2 doesn't display the age even though it takes the input. To fix, remove padding from info class in index.html.
+
 
