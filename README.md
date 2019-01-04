@@ -5,7 +5,7 @@ Create your project Directory and run the following steps:
 Step 1:
 ```
 $ git clone https://github.com/ApoorvSadana/flask-projects.git
-
+```
 Step 2
 ```
 $ cd flask-projects
