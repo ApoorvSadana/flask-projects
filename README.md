@@ -16,7 +16,7 @@ $ sudo pip install -r requirements.txt
 ```
 Step 4 (To run B2+C2)
 ```
-$ python C2+B2/application.pyc
+$ python B2+C2/application.pyc
 ```
 Step 5 (To run Login)
 ```
