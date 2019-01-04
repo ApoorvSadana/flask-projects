@@ -7,10 +7,10 @@
 <div style="padding: 30px; position: absolute; width: 90%; bottom: 5%">
 	<form style="padding-right: 30px;" action="{{ url_for('login') }}" method="post">
 		Username<br>
-		<input type="text" name="Username" class="credentials" name="Username"><br>
+		<input type="text" name="Username" class="credentials" name="Username" required><br>
 		<br>
 		Password<br>
-		<input type="Password" name="Password" class="credentials" name="Password"><br><br>
+		<input type="Password" name="Password" class="credentials" name="Password" required><br><br>
 		<input type="submit" value="Login" class="submit">
 	</form>
 </div>
