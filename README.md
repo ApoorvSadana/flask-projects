@@ -16,11 +16,11 @@ $ sudo pip install -r requirements.txt
 ```
 Step 4 (To run B2+C2)
 ```
-$ python B2+C2/application.pyc
+$ python B2+C2/application.py
 ```
 Step 5 (To run Login)
 ```
-$ python Login/application.pyc
+$ python Login/application.py
 ```
 
 Features of B2+C2:
