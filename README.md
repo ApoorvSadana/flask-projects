@@ -5,16 +5,20 @@ Create your project Directory and run the following steps:
 Step 1:
 ```
 $ git clone https://github.com/ApoorvSadana/flask-projects.git
-```
+
 Step 2
+```
+$ cd flask-projects
+```
+Step 3
 ```
 $ sudo pip install -r requirements.txt
 ```
-Step 3 (To run B2+C2)
+Step 4 (To run B2+C2)
 ```
 $ python C2+B2/application.pyc
 ```
-Step 4 (To run Login)
+Step 5 (To run Login)
 ```
 $ python Login/application.pyc
 ```
